@@ -2,8 +2,10 @@ const express = require("express");
 const db = require('./utils/database');
 const ToDos = require("./models/todos.model");
 require('dotenv').config();
+const cors = require('cors');
 const PORT = process.env.PORT || 8000;
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 db.authenticate()
