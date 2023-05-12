@@ -27,14 +27,6 @@ app.post('/api/v1/todos', async (req, res) =>{
         res.status(400).json(error)
     }
 })
-app.get('/', async (req, res)=>{
-    try{
-    console.log("Bienvenido a ToDos API. Con esta API puedes crear, ver, editar y eliminar ToDos.")
-    }
-    catch(error){
-    res.status(400).json(error)
-    }
-})
 app.get('/api/v1/todos', async (req, res)=>{
     try{
     const toDos = await ToDos.findAll();
